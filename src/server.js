@@ -1,6 +1,4 @@
 var http = require('http'),
-    browserify = require('browserify'),
-    literalify = require('literalify'),
     React = require('react'),
     ReactDOMServer = require('react-dom/server');
  import  App  from './app';
@@ -25,6 +23,7 @@ app.get('/', function (req, res) {
         <script dangerouslySetInnerHTML={{__html:
         'var APP_PROPS = ' + JSON.stringify(props) + ';'
         }}/>
+        <script src="./dist/manifest.js"/>
         <script src="./dist/lib.js"/>
         <script src="./dist/app.js"/>
       </body>
@@ -32,5 +31,5 @@ app.get('/', function (req, res) {
     res.end(html);
 });
 app.listen(3000,function(){
-  console.log('123123');
+  console.log('open href http://localhost:3000');
 });

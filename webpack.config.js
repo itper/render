@@ -8,8 +8,8 @@ module.exports = {
         lib:['react','react-dom']
     },
     output:{
-        path:'./dist',
-        filename:'[name].[chunkhash].js'
+        path:'./public/dist',
+        filename:'[name].js'
     },
     module:{
         // preLoaders:[
@@ -36,7 +36,12 @@ module.exports = {
         ]
     },
     plugins:[
-         new commonsChunkPlugin({names:['lib']}),
-         
+         new commonsChunkPlugin({names:['lib','manifest']}),
+         // new HtmlPlugin({
+         //    filename:'index.html',
+         //    chunks:['app','lib'],
+         //    template:'./src/index.html'
+         // }),
+         // new AutoInsertManifest()
     ]
 }

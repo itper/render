@@ -1,3 +1,3 @@
-babel -d ./render ./src
-webpack
-node ./render/server
+### babel -d ./render ./src
+### webpack
+### node ./render/server
